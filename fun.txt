@@ -1,0 +1,20 @@
+#include <stdio.h>
+void myfunction( int a,int b){
+    int add=a+b;
+    int sub=a-b;
+    int mul=a*b;
+    int div=a/b;
+    int mod=a%b;
+    printf("add %d\n",add);
+    printf("sub %d\n",sub);
+    printf(" mul %d\n",mul);
+    printf("div %d\n",div );
+    printf("mod %d\n",mod);
+}
+
+int main() {
+    // Write C code here
+    myfunction(5,5);
+
+    return 0;
+}
