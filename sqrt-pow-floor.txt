@@ -1,0 +1,70 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    printf("%f\n",ceil(1.1));
+        printf("%f\n",ceil(1.9));
+    printf("%f\n",floor(1.1));
+    printf("%f\n",floor(1.9));
+
+
+    return 0;
+}
+
+INT:
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    printf("%d\n",ceil(1.1));
+    printf("%d\n",ceil(1.9));
+    printf("%d\n",floor(1.1));
+    printf("%d\n",floor(1.9));
+
+
+    return 0;
+}
+
+
+
+pow&sqrt
+
+
+    // Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    // Write C code here
+    printf("%f\n",ceil(1.1));
+    printf("%f\n",ceil(1.9));
+    printf("%f\n",floor(1.1));
+    printf("%f\n",floor(1.9));
+    //sqrt
+    printf("%f\n",sqrt(16));
+    //pow
+    printf("%f\n",pow(5,2));
+
+
+    return 0;
+}
+
+side length (using a sqrt)
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+    float area,sl;
+    printf(" enter the area",area);
+    scanf("%f",&area);
+    printf(" the side length %f \n",sqrt(area));
+
+    return 0;
+}
