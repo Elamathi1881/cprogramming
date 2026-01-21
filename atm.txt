@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+int main() {
+    int pin, attempts = 0;
+    float balance = 1000.00;
+
+    while (attempts < 3) {
+        printf("Enter PIN:");
+        scanf("%d", &pin);
+        if (pin == 1234) {
+            printf("Correct PIN!\n");
+            printf("Balance: Rs. %.2f\n", balance);
+            float amt;
+            printf("Enter withdrawal amount: ");
+            scanf("%f", &amt);
+            if (amt <= balance) {
+                balance -= amt;
+                printf("Withdrawn: Rs. %.2f\n", amt);
+            } else {
+                printf("Insufficient balance!\n");
+            }
+            break;
+        } else {
+            attempts++;
+            printf("Wrong PIN! %d attempts left.\n", 3 - attempts);
+        }
+    }
+    if (attempts == 3) {
+        printf("Card blocked!\n");
+    }
+    return 0;
+}
+
+
+
+
+#include<stdio.h>
+int pinnumber=1403;
+    int pin, balance = 100000, wd,rd,attempts=3;
+    int check()
+    {
+        printf("Welcome to the ATM\n");
+    while(attempts>0)
+    {
+        printf("Enter the PIN :",pin);
+        scanf("%d",&pin);
+        if(pin==pinnumber)
+        {
+            printf("The Pin is correct\n");
+            printf("Enter the withdrawal amount\n");
+            scanf("%d",&wd);
+            if(wd<=balance)
+            {
+              printf("Transaction sucessfull\n");
+              balance = balance - wd;
+              printf("The remaining balance is %d",balance);
+              return 0;
+            }}
+        else
+            {
+             printf("Incorrect pin");
+          attempts--;
+            }
+    }
+    printf("Card is blocked");
+    }
+int main()
+{
+    check();
+}
