@@ -1,0 +1,35 @@
+nested struct & poiter using:-
+
+
+
+#include<stdio.h>
+struct address{
+    char city[20];
+    int pincode;
+};
+struct student{
+    int id;
+    char name[30];
+    struct address adds;
+};
+int main()
+{
+    struct student s;
+    struct student *p;
+    p=&s;
+    printf("Enter the ID number:");
+    scanf("%d",&p->id);
+    printf("Enter the name if the employee:");
+    scanf("%s",p->name);
+    printf("Enter the city name:");
+    scanf("%s",p->adds.city);
+    printf("Enter the pincode:");
+    scanf("%d",&p->adds.pincode);
+    printf("------------------student details-------------------");
+    printf("ID number=%d\n",p->id);
+    printf("name of the employee=%s\n",p->name);
+    printf("city=%s\n",p->adds.city);
+    printf("pincode=%d\n",p->adds.pincode);
+    return 0;
+    
+}
