@@ -1,0 +1,172 @@
+structure of c:-
+
+
+    #include<stdio.h>
+#include<string.h>
+struct studentname{
+    int reg;
+    char name[50];
+    float cgpa;
+    
+};
+int main()
+{
+    struct studentname name1;
+    name1.reg=1;
+    strcpy(name1.name,"ela");
+    name1.cgpa=9.8;
+    printf("the reg num is:%d \n",name1.reg);
+        printf("the name  is:%s \n",name1.name);
+    printf("the cgpa num is:%.2f",name1.cgpa);
+    return 0;
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+problem 1:
+
+
+#include<stdio.h>
+#include<string.h>
+struct studentname{
+    int roll;
+    char name[50];
+    float mark;
+    
+};
+int main()
+{
+    struct studentname name1;
+    name1.roll=1;
+    strcpy(name1.name,"ela");
+    name1.mark=98;
+    printf("the reg num is:%d \n",name1.roll);
+        printf("the name  is:%s \n",name1.name);
+    printf("the cgpa num is:%.2f",name1.mark);
+    return 0;
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+employeeee;
+
+
+#include<stdio.h>
+struct employee{
+    int id;
+    float salary;
+}employee[3];
+int main(){
+for(int i=0;i<3;i++){
+    printf("Enter the employee id:%d\n",i+1);
+    scanf("%d",&employee[i].id);
+        printf("Enter the employee saryla:\n");
+            scanf("%f",&employee[i].salary);
+
+
+}
+printf("------------------employee  details---------------\n");
+return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+mobile recharge;
+
+
+#include<stdio.h>
+struct mob{
+    int num;
+    float rechar;
+}mob[1];
+int main(){
+for(int i=0;i<1;i++){
+    printf("Enter the mobile number:%d\n",i+1);
+    scanf("%d",&mob[i].num);
+        printf("Enter the recharge:\n");
+            scanf("%f",&mob[i].rechar);
+
+
+}
+printf("------------------displayed---------------\n");
+return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+  nested struct:-
+
+
+    // Online C compiler to run C program online
+#include <stdio.h>
+struct student{
+    char firstname[20];
+    char lastname[20];
+    
+    
+};
+struct details{
+    char dept[20];
+    int year;
+    struct student name;
+
+    
+};
+
+
+int main() {
+    struct student name={"ela","mathi"};
+    struct details std={"ECE",2028,name};
+    printf("my name is %s %s from the department %s,completed in the year of %d",std.name.firstname,std.name.lastname,std.dept,std.year);
+
+
+    return 0;
+}
+___________________________________________________________________________________________________________________________________
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+struct student{
+    //char firstname[20];
+    //char lastname[20];
+    char dept[20];
+    
+    
+};
+struct details{
+    int year;
+    char name[20];
+    struct student depts;
+
+
+    
+};
+
+
+int main() {
+    struct student course={"ECE"};
+    struct details std={2028,"ela",course};
+    printf("my name is %s from the department %s,completed in the year of %d",std.name,std.depts.dept,std.year);
+
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------
+
+pointer using struct:-
+
+
+
+#include<stdio.h>
+struct student{
+    char name[20];
+    int regno;
+};
+int main(){
+    struct student std1={"ELAMATHI",222};
+    struct student *point=&std1;
+    printf("my name is%s \n",point->name);
+        printf("my name is memory address %p \n",point->name);
+        printf("my name is%d \n",point->regno);
+        printf("my name is memory address %p \n",point->regno);
+        
+return 0;
+
+}
+--------------------------------------------------------------------------------------------------------------------

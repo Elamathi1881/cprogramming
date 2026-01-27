@@ -1,0 +1,179 @@
+DAY-5
+
+
+   CALLOC:-
+        
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int n,i;
+    int *array;
+    int sum=0;
+    printf("Enter the number of element:");
+    scanf("%d",&n);
+    array=(int*)calloc(n ,sizeof(int));
+    if(array==NULL){
+        printf("memory not allocated \n");
+        return 0;
+    }else{
+        printf("memory allocated and the allocated memory is %d \n",n);
+    }
+    printf("enter %d numbers by adding a gap for each number \n",n);
+    for(i=0;i<n;i++){
+        scanf("%d",&array[i]);
+        sum+=array[i];
+    }
+    printf("The sum of all elements is :%d \n",sum);
+    free(array);
+    printf("memory deleted successfully");
+    
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+REALLOC(using calloc):-
+
+
+ #include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int n,i;
+    int *array;
+    int sum=0;
+    printf("Enter the number of element:");
+    scanf("%d",&n);
+    array=(int*)calloc(n ,sizeof(int));
+    if(array==NULL){
+        printf("memory not allocated \n");
+        return 0;
+    }else{
+        printf("memory allocated and the allocated memory is %d \n",n);
+    }
+    printf("enter %d numbers by adding a gap for each number \n",n);
+    for(i=0;i<n;i++){
+        scanf("%d",&array[i]);
+        sum+=array[i];
+    }
+    int newvalue;
+    printf("Enter the new value:\n");
+    scanf("%d",&newvalue);
+    array=(int*)realloc(array,newvalue*sizeof(int));
+    if(array==NULL){
+                printf("memory not allocated \n");
+ }else{
+             printf("memory allocated and the allocated memory is %d \n",newvalue);
+
+ }
+   printf("Enter %d numbers by adding a gap for each number \n",newvalue);
+   for(i=n;i<newvalue;i++){
+       scanf("%d",&array[i]);
+       sum+=array[i];
+   }
+    printf("The sum of all elements is :%d \n",sum);
+    free(array);
+    printf("memory deleted successfully");
+    
+
+    return 0;
+}
+
+output:
+
+  Enter the number of element:2
+memory allocated and the allocated memory is 2 
+enter 2 numbers by adding a gap for each number 
+10 20
+Enter the new value:
+3
+memory allocated and the allocated memory is 3 
+Enter 3 numbers by adding a gap for each number 
+30
+The sum of all elements is :60 
+memory deleted successfully
+
+=== Code Execution Successful ===
+-----------------------------------------------------------------------------------------------------------------
+realloc :-(using malloc)
+
+
+   #include<stdio.h>
+#include<stdlib.h>
+int main() {
+    int n,i;
+    int *array;
+    int sum=0;
+    printf("Enter the number of element:");
+    scanf("%d",&n);
+    array=(int*)malloc(n *sizeof(int));
+    if(array==NULL){
+        printf("memory not allocated \n");
+        return 0;
+    }else{
+        printf("memory allocated and the allocated memory is %d \n",n);
+    }
+    printf("enter %d numbers by adding a gap for each number \n",n);
+    for(i=0;i<n;i++){
+        scanf("%d",&array[i]);
+        sum+=array[i];
+    }
+    int newvalue;
+    printf("Enter the new value:\n");
+    scanf("%d",&newvalue);
+    array=(int*)realloc(array,newvalue*sizeof(int));
+    if(array==NULL){
+                printf("memory not allocated \n");
+ }else{
+             printf("memory allocated and the allocated memory is %d \n",newvalue);
+
+ }
+   printf("Enter %d numbers by adding a gap for each number \n",newvalue);
+   for(i=n;i<newvalue;i++){
+       scanf("%d",&array[i]);
+       sum+=array[i];
+   }
+    printf("The sum of all elements is :%d \n",sum);
+    free(array);
+    printf("memory deleted successfully");
+    
+
+    return 0;
+}
+_________________________________________________________________________________________________________
+
+
+marks&sub:
+
+
+  // Online C compiler to run C program online
+#include <stdio.h>
+#include<stdlib.h>
+
+int main() {
+     int sub,i;
+     int *mark;
+     printf("enter the subjec number\n:");
+     scanf("%d",&sub);
+     mark=(int*)malloc(sub*sizeof(int));
+     if(mark==NULL){
+         printf("memory allocated\n");
+     }
+     printf("enter mark for %d the subjec\n:",sub);
+     for(i=0;i<sub;i++){
+         scanf("%d",&mark[i]);
+     }
+     printf("subjec marks %d");
+     for(i=0;i<sub;i++){
+         printf("subjec %d:%d\n",i+1,mark[i]);
+     }
+     
+free(mark);
+    return 0;
+}
+__________________________________________________________________________________________________________________
+
+
