@@ -1,0 +1,75 @@
+nested struct & poiter using:-
+
+
+
+#include<stdio.h>
+struct address{
+    char city[20];
+    int pincode;
+};
+struct student{
+    int id;
+    char name[30];
+    struct address adds;
+};
+int main()
+{
+    struct student s;
+    struct student *p;
+    p=&s;
+    printf("Enter the ID number:");
+    scanf("%d",&p->id);
+    printf("Enter the name if the employee:");
+    scanf("%s",p->name);
+    printf("Enter the city name:");
+    scanf("%s",p->adds.city);
+    printf("Enter the pincode:");
+    scanf("%d",&p->adds.pincode);
+    printf("------------------student details-------------------");
+    printf("ID number=%d\n",p->id);
+    printf("name of the employee=%s\n",p->name);
+    printf("city=%s\n",p->adds.city);
+    printf("pincode=%d\n",p->adds.pincode);
+    return 0;
+    
+}
+------------------------------------------------------------------------------------------------------------------------------
+
+DEPATMENT&EMPLOYEEE:-
+
+
+
+   #include<stdio.h>
+struct dept{
+    char name[20];
+    int id;
+};
+struct employee{
+    int id;
+    char name[30];
+    struct dept adds;
+};
+int main()
+{
+    struct employee s;
+    struct employee *p;
+    p=&s;
+    printf("Enter the employee ID number:\n");
+    scanf("%d",&p->id);
+    printf("Enter the name if the employee:\n");
+    scanf("%s",p->name);
+    printf("enter the name of the dept:\n");
+    scanf("%s",p->adds.name);
+    printf("enter the id of the dept:\n");
+    scanf("%d",&p->adds.id);
+    
+    
+    printf("------------------student details-------------------\n");
+    printf("ID number=%d\n",p->id);
+    printf("name of the employee=%s\n",p->name);
+    printf("name=%s\n",p->adds.name);
+    printf("id=%d\n",p->adds.id);
+    return 0;
+    
+}
+---------------------------------------------------------------------------------------------------------
