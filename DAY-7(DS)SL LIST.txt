@@ -1,0 +1,120 @@
+single linked list:-
+
+
+#include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact*next;
+};
+
+int main() {
+    struct contact*st1=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st2=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st3=(struct contact*)malloc(sizeof(struct contact));
+     st1->number=1234567894;
+     st2->number=1254789630;
+     st3->number=7894561230;
+     st1->next=st2;
+     st2->next=st3;
+     st3->next=NULL;
+     struct contact*head=st1;
+     printf("contact\n");
+     while(head!=NULL){
+         printf("%ld \n",head->number);
+         head=head->next;
+     }
+     printf("finish\n");
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+problem:1
+
+
+    #include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact*next;
+};
+
+int main() {
+    struct contact*num1=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*num2=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*num3=(struct contact*)malloc(sizeof(struct contact));
+     scanf("%d\n",&num1->number);
+     scanf("%d\n",&num2->number);
+     scanf("%d\n",&num3->number);
+     num1->next=num2;
+     num2->next=num3;
+     num3->next=NULL;
+     struct contact*head=num1;
+     while(head!=NULL){
+         printf("%ld \n",head->number);
+         head=head->next;
+     }
+     printf("NULL\n");
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+problem-2
+
+
+  #include <stdio.h>
+#include<stdlib.h>
+struct roll{
+     int number;
+    struct roll*next;
+};
+
+int main() {
+    struct roll*r1=(struct roll*)malloc(sizeof(struct roll));
+    struct roll*r2=(struct roll*)malloc(sizeof(struct roll));
+     scanf("%d\n",&r1->number);
+     scanf("%d\n",&r2->number);
+     r1->next=r2;
+     r2->next=NULL;
+     struct roll*head=r1;
+     while(head!=NULL){
+         printf("Roll %d\n",head->number);
+         head=head->next;
+     }
+     printf("NULL");
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+problem-3
+
+
+  #include <stdio.h>
+#include<stdlib.h>
+struct cart{
+    long int number;
+    struct cart*next;
+};
+
+int main() {
+    struct cart*num1=(struct cart*)malloc(sizeof(struct cart));
+    struct cart*num2=(struct cart*)malloc(sizeof(struct cart));
+    struct cart*num3=(struct cart*)malloc(sizeof(struct cart));
+     scanf("%d\n",&num1->number);
+     scanf("%d\n",&num2->number);
+     scanf("%d\n",&num3->number);
+     num1->next=num2;
+     num2->next=num3;
+     num3->next=NULL;
+     struct cart*head=num1;
+     while(head!=NULL){
+         printf("%ld \n",head->number);
+         head=head->next;
+     }
+     printf("NULL\n");
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------
