@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Supplier {
+    char supplier_name[30];
+    char supplier_location[30];
+};
+
+struct Product {
+    int product_id;
+    char product_name[30];
+    float product_price;
+    struct Supplier sup;   // Nested structure
+};
+
+int main() {
+    int n, i;
+    struct Product *p;   // Structure pointer
+
+    printf("Enter number of products: ");
+    scanf("%d", &n);
+
+    // Dynamic memory allocation
+    p = (struct Product *)malloc(n * sizeof(struct Product));
+
+    if (p == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    // Input product details
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details for Product %d\n", i + 1);
+
+        printf("Product ID: ");
+        scanf("%d", &p[i].product_id);
+
+        printf("Product Name: ");
+        scanf("%s", p[i].product_name);
+
+        printf("Product Price: ");
+        scanf("%f", &p[i].product_price);
+
+        printf("Supplier Name: ");
+        scanf("%s", p[i].sup.supplier_name);
+
+        printf("Supplier Location: ");
+        scanf("%s", p[i].sup.supplier_location);
+    }
+
+    // Display product details
+    printf("\n--- Product Details ---\n");
+    for (i = 0; i < n; i++) {
+        printf("\nProduct %d\n", i + 1);
+        printf("ID: %d\n", p[i].product_id);
+        printf("Name: %s\n", p[i].product_name);
+        printf("Price: %.2f\n", p[i].product_price);
+        printf("Supplier: %s\n", p[i].sup.supplier_name);
+        printf("Location: %s\n", p[i].sup.supplier_location);
+    }
+
+    // Free allocated memory
+    free(p);
+
+    return 0;
+}
