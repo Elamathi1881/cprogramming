@@ -1,0 +1,58 @@
+recursion:
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+int fib(int n){
+    if(n==0){
+        return 0;
+    }
+    else if(n==1){
+        return 1;
+        
+    }else{
+        return fib(n-1)+fib(n-2);
+    }
+}
+
+int main() {
+    // Write C code here
+    int n;
+    printf("ENTER THE NUMBER:");
+    scanf("%d",&n);
+    printf("The position of %d is %d \n",n,fib(n));
+
+    return 0;
+}
+
+
+FACTORIAL(using recursion):
+
+
+
+
+// Online C compiler to run C program online
+#include <stdio.h>
+int factorial(int n){
+    if(n==0){
+        return 1;
+    }
+    else {
+        return n*factorial(n-1);
+        
+    }
+}
+
+int main() {
+    // Write C code here
+    int num;
+    printf("ENTER THE NUMBER:");
+    scanf("%d",&num);
+    printf("The position of %d is %d \n",num,factorial(num));
+
+    return 0;
+}
+
+
+
+
