@@ -1,0 +1,147 @@
+PROBLEM -3(REVERSE NUMBER)IN SINGLE LINKED LIST
+
+#include <stdio.h>
+#include<stdlib.h>
+struct cart{
+    long int number;
+    struct cart*next;
+};
+
+int main() {
+    struct cart*num1=(struct cart*)malloc(sizeof(struct cart));
+    struct cart*num2=(struct cart*)malloc(sizeof(struct cart));
+    struct cart*num3=(struct cart*)malloc(sizeof(struct cart));
+     scanf("%d\n",&num1->number);
+     scanf("%d\n",&num2->number);
+     scanf("%d\n",&num3->number);
+     num3->next=num2;
+     num2->next=num1;
+     num1->next=NULL;
+     struct cart*head=num3;
+     while(head!=NULL){
+         printf("%ld \n",head->number);
+         head=head->next;
+     }
+     printf("NULL\n");
+    return 0;
+}
+_______________________________________________________________________________________________________________________
+
+
+problem -4;
+
+singly linked list(nested struct)
+
+
+  #include<stdio.h>
+#include<stdlib.h>
+struct contact{
+    int accno;
+    long long phone;
+};
+struct customer{
+    //int accno;
+    struct contact contact;
+    struct customer *next;
+};
+int main()
+{
+    struct customer *c1,*c2;
+    c1=(struct customer*)malloc(sizeof(struct customer));
+    c2=(struct customer*)malloc(sizeof(struct customer));
+    c1->contact.accno=101;
+    c1->contact.phone=1234567890;
+    c1->next=c2;
+    c2->contact.accno=102;
+    c2->contact.phone=7894561230;
+    c2->next=NULL;
+    struct customer *head=c1;
+    printf("details\n");
+    while(head!=NULL){
+        printf(" %d  %lld-->",head->contact.accno,head->contact.phone);
+        head=head->next;
+    }
+    printf("NULL");
+    return 0;
+}
+________________________________________________________________________________________________________________________________________
+
+problem 5:-
+
+
+
+ #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct contact{
+    int roll;
+    char name[20];
+    char dept[20];
+};
+struct details{
+    struct contact contact;
+    struct details *next;
+};
+int main()
+{
+    struct details *c1,*c2;
+    c1=(struct details*)malloc(sizeof(struct details));
+    c2=(struct details*)malloc(sizeof(struct details));
+    c1->contact.roll=101;
+    strcpy(c1->contact.name,"arun");
+    strcpy(c1->contact.dept,"ECE");
+    c1->next=c2;
+    c2->contact.roll=102;
+    strcpy(c2->contact.name,"AJAY");
+   strcpy(c2->contact.dept,"EEE");
+    c2->next=NULL;
+    struct details *head=c1;
+    printf("details\n");
+    while(head!=NULL){
+        printf(" %d %s %s -->",head->contact.roll,head->contact.name,head->contact.dept);
+        head=head->next;
+    }
+    printf("NULL");
+    return 0;
+}
+________________________________________________________________________________________________________________________________________
+
+problem-6
+
+
+
+#include <stdio.h>
+#include<stdlib.h>
+struct orders
+{
+    int id;
+    char name[20];
+    int price;
+    char status[20];
+    struct orders*next;
+};
+
+int main() {
+  struct orders *ct1 = (struct orders*)malloc(sizeof(struct orders));
+  struct orders *ct2= (struct orders*)malloc(sizeof(struct orders));
+  scanf("%d",&ct1->id);
+  scanf("%s",ct1->name);
+  scanf("%d",&ct1->price);
+  scanf("%s",ct1->status);
+   scanf("%d",&ct2->id);
+  scanf("%s",ct2->name);
+  scanf("%d",&ct2->price);
+  scanf("%s",ct2->status);
+  ct1->next=ct2;
+  ct2->next=NULL;
+  struct orders *head = ct1;
+  while(head != NULL)
+  {
+      printf("%d %s %d %s->",head->id,head->name,head->price,head->status);
+      head = head->next;
+  }
+  printf("NULL");
+  return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------
+ 
