@@ -1,0 +1,190 @@
+DOUBLE LINKED LISH:-
+
+   #include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact*next;
+    struct contact*previous;
+    
+};
+
+int main() {
+    struct contact*st1=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st2=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st3=(struct contact*)malloc(sizeof(struct contact));
+     st1->number=1234567894;
+     st2->number=1254789630;
+     st3->number=7894561230;
+     st1->previous=NULL;
+     st1->next=st2;
+     st2->previous=st1;
+     st2->next=st3;
+     st3->previous=st2;
+     st3->next=NULL;
+     struct contact*head=st1;
+     printf("contact\n");
+     while(head!=NULL){
+         printf("%ld \n",head->number);
+         head=head->next;
+     }
+     printf("finish\n");
+    return 0;
+}
+________________________________________________________________________________________________________________________________________
+
+
+#include <stdio.h>
+#include<stdlib.h>
+struct contact
+{
+    long int number;
+    struct contact*next;
+    struct contact*previous;
+};
+
+int main() {
+  struct contact *head;
+  struct contact *ct1 = (struct contact*)malloc(sizeof(struct contact));
+  struct contact *ct2= (struct contact*)malloc(sizeof(struct contact));
+  struct contact *ct3 = (struct contact*)malloc(sizeof(struct contact));
+  scanf("%d",&ct1->number);
+  scanf("%d",&ct2->number);
+  scanf("%d",&ct3->number);
+  ct1->previous=NULL;
+  ct1->next=head;
+  head=ct1;
+  ct2->previous=ct1;
+  ct2->next=head;
+  head=ct2;
+  ct3->previous=ct2;
+  ct3->next=head;
+  head=ct3;
+  while(head != NULL)
+  {
+      printf("%ld->",head->number);
+      head = head->next;
+  }
+  printf("NULL");
+  return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------
+
+problem 1:-
+
+
+ #include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int songID;
+    struct Node *prev;
+    struct Node *next;
+};
+
+struct Node *head = NULL;
+
+// Insert at beginning
+void insertBegin(int value) {
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+
+    newNode->songID = value;
+    newNode->prev = NULL;
+    newNode->next = head;
+
+    if (head != NULL) {
+        head->prev = newNode;
+    }
+
+    head = newNode;
+}
+
+// Display playlist forward
+void display() {
+    struct Node *temp = head;
+    while (temp != NULL) {
+        printf("%d <-> ", temp->songID);
+        temp = temp->next;
+    }
+    printf("NULL");
+}
+
+int main() {
+    insertBegin(30);
+    insertBegin(20);
+    insertBegin(10);
+
+    display();
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------
+single circular linked list:-
+
+
+   #include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact*next;
+};
+
+int main() {
+    struct contact*st1=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st2=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st3=(struct contact*)malloc(sizeof(struct contact));
+     st1->number=1234567894;
+     st2->number=1254789630;
+     st3->number=7894561230;
+     st1->next=st2;
+     st2->next=st3;
+     st3->next=st1;
+     struct contact*head=st1;
+      struct contact*temp=head;
+     printf("contact\n");
+     do{
+         printf("%ld--->",temp->number);
+         temp=temp->next;
+     }
+     while(temp!=head);
+     printf("retunr to head\n");
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+double  circular linked list:-
+
+#include <stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact*next;
+    struct contact*previous;
+    
+};
+
+int main() {
+    struct contact*st1=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st2=(struct contact*)malloc(sizeof(struct contact));
+    struct contact*st3=(struct contact*)malloc(sizeof(struct contact));
+     st1->number=1234567894;
+     st2->number=1254789630;
+     st3->number=7894561230;
+     st1->previous=st3;
+     st1->next=st2;
+     st2->previous=st1;
+     st2->next=st3;
+     st3->previous=st2;
+     st3->next=st1;
+     struct contact*head=st1;
+     struct contact*temp=head;
+     printf("contact\n");
+     do{
+         printf("%ld---->",temp->number);
+         temp=temp->next;
+     }while(temp!=head);
+     printf("finish\n");
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------
